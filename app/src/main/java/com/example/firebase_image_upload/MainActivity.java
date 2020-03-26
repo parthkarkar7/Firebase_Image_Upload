@@ -158,7 +158,6 @@ public class MainActivity extends AppCompatActivity {
                     imageview.setImageURI(filePath);
                     bytearrayoutputstream = null;
                     imgPath = getResizedBitmap(imageview);
-//                    image_resize.setImageURI(imgPath);
                     break;
             }
         } else {
