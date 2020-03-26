@@ -1,2 +1,11 @@
 # Firebase_Image_Upload
-Initial Commit
+
+Choose Image from Gallery
+
+Compress image 
+
+Upload image to Firebase Storage
+
+Retrieve Image from Firebase Storage
+
+Display into the Imageview
