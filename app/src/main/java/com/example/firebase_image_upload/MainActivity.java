@@ -109,9 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         Glide.with(MainActivity.this)
                                                 .load(download_url)
-                                                .thumbnail(0.2f)
                                                 .into(image_resize);
-
                                     }
                                 }
                             });
