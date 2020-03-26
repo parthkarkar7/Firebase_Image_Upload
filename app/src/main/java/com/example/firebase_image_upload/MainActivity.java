@@ -128,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
                     })
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
 
-                        // Progress Listener for loading
-                        // percentage on the dialog box
                         @Override
                         public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                             progressDialog.setMessage("Uploading " + taskSnapshot.getBytesTransferred() / 1024 + " / " + taskSnapshot.getTotalByteCount() / 1024 + " KB");
@@ -168,13 +166,18 @@ public class MainActivity extends AppCompatActivity {
 
     public Uri getResizedBitmap(ImageView imageview) {
 
+        //get bitmap from uri
         bm = ((BitmapDrawable) imageview.getDrawable()).getBitmap();
 
+        //center crop the bitmap
         int dimension = Math.min(bm.getWidth(), bm.getHeight());
         centerBitmap = ThumbnailUtils.extractThumbnail(bm, dimension, dimension);
 
+        // scale the bitmap
         converetdImage = Bitmap.createScaledBitmap(centerBitmap, 500, 500, true);
         path = null;
+
+        //convert bitmap to uri
         path = MediaStore.Images.Media.insertImage(getContentResolver(), converetdImage, "title", null);
         return Uri.parse(path);
     }
